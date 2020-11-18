@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício 5.2</title>
+    <style>
+        div {
+            border-color: black;
+            border-style: solid;
+        }
+
+        .title {
+            text-align: center;
+        }
+
+        .main-content {
+            background-color: yellow;
+        }
+
+        .main-content .center-content {
+            background-color: red;
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .main-content .center-content p {
+            font-style: italic;
+        }
+
+        .main-content .left-content {
+            background-color: green;
+            width: 60%;
+            margin-left: 0;
+            margin-right: auto;
+        }
+
+        .main-content .left-content .small-image {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 100%;
+        }
+
+        .main-content .right-content {
+            background-color: blue;
+            width: 60%;
+            margin-left: auto;
+            margin-right: 0;
+        }
+
+        .main-content .description {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        let titulo = document.createElement('h1');
+        titulo.innerHTML = 'Exercício 5.2 - JavaScript DOM';
+        document.body.appendChild(titulo);
+        let divMain = document.createElement('div');
+        divMain.className = "main-content"
+        document.body.appendChild(divMain);
+        let divCenter = document.createElement('div');
+        divCenter.className = "center-content"
+        divMain.appendChild(divCenter);
+        let texto = document.createElement('p');
+        texto.innerHTML = "sera que deu certo?"
+        divCenter.appendChild(texto);
+        let divLeft = document.createElement('div');
+        divLeft.className = "left-content"
+        divMain.appendChild(divLeft);
+        let divRight = document.createElement('div');
+        divRight.className = "right-content"
+        divMain.appendChild(divRight);
+        let imagem = document.createElement('img');
+        imagem.className = "small-image";
+        imagem.src = 'https://picsum.photos/200';
+        divLeft.appendChild(imagem);
+        let list = document.createElement('ul');
+        divRight.appendChild(list);
+        let numeros = ['Um', 'Dois', 'Três', 'Quatro', 'Cinco', 'Seis', 'Sete', 'Oito', 'Nove', 'Dez']
+        for (let num in numeros) {
+            let li = document.createElement('li');
+            li.innerHTML = numeros[num];
+            list.appendChild(li);
+        }
+        for (let index = 0; index < 3; index +=1) {
+        const h3 = document.createElement('h3');
+        h3.innerHTML = 'Não sei o que escerever ' 
+        divMain.appendChild(h3);
+        }
+    </script>
+</body>
+
+</html>
